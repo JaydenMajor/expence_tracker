@@ -1,2 +1,2 @@
-expence_tracker
+Expence Tracker
 ===============
