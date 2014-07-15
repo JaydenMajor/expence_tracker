@@ -14,20 +14,21 @@ body {
 
 /* Portrait layout (default) */
 .app {
-	height:250px;
-	width:300px;
-	margin:30px;
+	height:100%;
+	width:90%;
+	margin:5%;
 }
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-		margin-left:160px;
-    }
+.app h1,.app h2,.app h3,.app h4,.app h5,.app h6{
+	font-weight:bold;
 }
-
+.app p,.app h1,.app h2,.app h3,.app h4,.app h5,.app h6{
+	color:#fefefe;
+}
+.app p{
+	font-size:1em;
+}
 h1 {
-    font-size:30px;
+    font-size:2.8em;
     font-weight:normal;
     margin:0px;
     overflow:visible;
@@ -35,13 +36,33 @@ h1 {
     text-align:center;
 	color:#FEFEFE;
 }
+.expenceTitle{
+	color:#2a9ec9;
+	font-weight:bold;
+}
+.header{
+	height:100%;
+	width:100%;
+	margin-top:-5.5%;
+	margin-left:-5.5%;
+	padding:5%;
+	padding-top:5.5%;
+	padding-left:6%;
+	border-bottom:1px solid #000;
+	background:#222;
+	background: -webkit-linear-gradient(#111, #222);
+	background: -moz-linear-gradient(#111, #222);
+	background: linear-gradient(#111, #222);
+}
 a{
 	text-decoration:none;
 }
 .button{
 	background-color: #fff;
-	border-color: #ccc;
-	border-radius:10px;
+	background: -webkit-linear-gradient(#efefef, #fefefe);
+	background: -moz-linear-gradient(#efefef, #fefefe);
+	background: linear-gradient(#efefef, #fefefe);
+	border-radius:8px;
 	margin:auto;
 	text-align:center;
 	text-decoration:none;
@@ -65,9 +86,69 @@ a{
 	padding:10px;
 	position:absolute;
 	bottom:0;
-	font-size:14px;
+	font-size:16px;
+	text-align:center;
+	margin:auto;
 }
 .jaydenName{
-	color:#2a8ec8;
+	color:#2a9ec9;
 	text-shadow:0 0 1px #fefefe;
+}
+form{
+	width:275px;
+}
+label{
+	color:#fefefe;
+	font-size:20px;
+	line-height:23px;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+input,textarea{
+	padding:10px;
+	border:1px solid #333;
+	border-radius:6px;
+	width:100%;
+}
+.back{
+	margin-left:-20px;
+	margin-right:10px;
+	color:#fefefe;
+	font-size:20px;
+	padding:10px;
+	background: #428bca;
+	border-color: #357ebd;
+}
+.back:hover,.back:active{
+	background: #3071a9;
+	border-color: #285e8e;
+}
+.submit{
+	padding:10px;
+	color:#fefefe;
+	font-size:23px;
+	background: #428bca;
+	border-color: #357ebd;
+	width:108%;
+}
+.submit:hover,.submit:active{
+	background: #3071a9;
+	border-color: #285e8e;
+}
+.imgbutton{
+	width:100px;
+	height:100px;
+	background:#eee url('../img/image.png') center center no-repeat;
+	border:1px solid #fff;
+	border-radius:10px;
+	color:#333;
+}
+.imgbutton:hover,.imgbutton:active{
+	border:1px solid #fefefe;
+}
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+		/* margin-left:160px; */
+    }
 }

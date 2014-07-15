@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jaydenmajor.expencetracker" version="0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.jaydenmajor.expencetracker" version="0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Expense Tracker</name>
     <description>
         Expense Tracker an app to track your purchases.
     </description>
     <author email="support@jaydenmajor.com" href="http://jaydenmajor.com/expence">Jayden Major</author>
     <preference name="permissions" value="none" />
+	<!-- <preference name="phonegap-version" value="3.5.0" /> -->
     <preference name="phonegap-version" value="3.3.0" />
     <preference name="orientation" value="default" />
-    <preference name="target-device" value="portrait" />
+    <preference name="target-device" value="handset" />
+	<preference name="deployment-target" value="5.0" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
