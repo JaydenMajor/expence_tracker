@@ -1,6 +1,6 @@
 //Index.js
 var running = false;
-var writeString = "";
+var version = "0.1";
 
 var app = {
 	initialize: function() {
@@ -23,28 +23,6 @@ var app = {
 		smallImage.src = "data:image/jpeg;base64," + imageData;
 	},
 	takePhotoError: function(){
-		alert('Photo Error: ' +message);
-	},
-	startFS: function(string){
-		writeString = string;
-		if(running){
-			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, failFS);
-		}
-	},
-	gotFS: function(fileSystem) {
-        fileSystem.root.getFile("expenses.json", {create: true, exclusive: false}, gotFileEntry, failFS);
-    },
-	failFS:function(evt) {
-		alert(evt.target.error.code);
-    },
-	gotFileEntry: function(fileEntry) {
-        fileEntry.file(gotFile, failFS);
-		fileEntry.createWriter(gotFileWriter, failFS);
-    },
-    gotFile: function(file){
-       alert('Get File');
-    },
-	gotFileWriter: function(){
-		 writer.write(writeString);
+		// alert('Photo Error: ' +message);
 	}
 };

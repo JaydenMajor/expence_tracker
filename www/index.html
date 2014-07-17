@@ -5,7 +5,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Expense Tracker</title>
     </head>
     <body>
@@ -20,13 +20,44 @@
 				<a href="about.html"><div class="button"><p>About Expense Tracker</p></div></a>
 			</div>
         </div>
+		<!-- 
 		<div class="footer">
 		<p>Expense Tracker Made By <span class="jaydenName">Jayden</span> Major</p>
 		</div>
+		-->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fsSuccess, fsFail);
+
+    function fsSuccess(fileSystem) {
+        fileSystem.root.getFile("hay.txt", {create: true, exclusive: false}, this.gotFileEntry, this.fsFail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.createWriter(this.gotFileWriter, this.fsFail);
+    }
+
+    function gotFileWriter(writer) {
+        writer.onwriteend = function(evt) {
+           alert("contents of file now 'some sample text'");
+            writer.truncate(11);  
+            writer.onwriteend = function(evt) {
+               alert("contents of file now 'some sample'");
+                writer.seek(4);
+                writer.write(" different text");
+                writer.onwriteend = function(evt){
+                   alert("contents of file now 'some different text'");
+                }
+            };
+        };
+        writer.write("some sample text");
+    }
+
+    function fsFail(error) {
+       alert(error.code);
+    }
         </script>
     </body>
 </html>
