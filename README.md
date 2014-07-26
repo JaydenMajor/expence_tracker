@@ -15,4 +15,4 @@ The expense tracker is easy to use and i just 5 steps you can be tracking your e
 	3. Enjoy a place where you know what your money is doing.
 	
 > When you place a value on the things you own and love you find out you are much richer that you ever imagined.
-> *--By Unknown--*
+> *-- By Unknown*
