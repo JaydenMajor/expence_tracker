@@ -3,7 +3,11 @@
 ##About The Expence Tracker
 
 The expense tracker made by Jayden Major. This is an app to help people keep track of there expenses and hopefully save money.
-			
+
+##PhoneGap App
+Expence is an app build with phonegap
+Public Link https://build.phonegap.com/apps/1005292/share
+
 ###How To Use
 The expense tracker is easy to use and i just 5 steps you can be tracking your expenses.
 	1. Go To the Add New Expense page
