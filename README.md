@@ -2,13 +2,13 @@
 ===============
 ##About The Expence Tracker
 
-	The expense tracker made by Jayden Major. This is an app to help people keep track of there expenses and hopefully save money.
+The expense tracker made by Jayden Major. This is an app to help people keep track of there expenses and hopefully save money.
 			
-	How To Use
-		The expense tracker is easy to use and i just 5 steps you can be tracking your expenses.
-		1. Go To the Add New Expense page
-		2. Fill out the details, take a photo of your expense and Add your expense.
-		3. Enjoy a place where you know what your money is doing.
+###How To Use
+The expense tracker is easy to use and i just 5 steps you can be tracking your expenses.
+1. Go To the Add New Expense page
+2. Fill out the details, take a photo of your expense and Add your expense.
+3. Enjoy a place where you know what your money is doing.
 	
-	> When you place a value on the things you own and love you find out you are much richer that you ever imagined.
-	>- By Unkowen
+> When you place a value on the things you own and love you find out you are much richer that you ever imagined.
+>- By Unkowen
