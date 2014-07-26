@@ -12,22 +12,6 @@ body {
     width:100%;
 	overflow:hidden;
 }
-/*
-::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: #F5F5F5;
-}
-::-webkit-scrollbar
-{
-	width: 6px;
-	background-color: #F5F5F5;
-}
-::-webkit-scrollbar-thumb
-{
-	background-color: #000000;
-}
-*/
 /* Portrait layout (default) */
 .app {
 	height:100%;
@@ -133,9 +117,14 @@ input,textarea{
 	width:100%;
 }
 .back{
+	/*
 	margin-left:-20px;
 	margin-right:10px;
 	margin-top:-10px;
+	*/
+	position:absolute;
+	top:20px;
+	left:15px;
 	color:#fefefe;
 	font-size:20px;
 	padding:10px;
@@ -145,6 +134,9 @@ input,textarea{
 .back:hover,.back:active{
 	background: #3071a9;
 	border-color: #285e8e;
+}
+.headerBack{
+	padding-left:65px;
 }
 .submit{
 	padding:10px;
@@ -257,6 +249,16 @@ input,textarea{
 	margin:auto;
 	margin-top:45%;
 }
+/* All iPhones Portrait */
+@media screen and (min-width: 319px) and (max-width: 360px){
+	h1{
+		font-size:2em;
+		margin:10px 0;
+	}
+	#list{
+		height:310px;
+	}
+}
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
 	body{
@@ -264,5 +266,15 @@ input,textarea{
 	}
     .app {
 		height:100%;
+    }
+}
+@media only screen and (min-device-width : 768px) {
+    body{
+        zoom: 125%;
+    }   
+}
+@media only screen and (min-device-width : 1024px){ 
+    body{
+        zoom: 150%;
     }
 }

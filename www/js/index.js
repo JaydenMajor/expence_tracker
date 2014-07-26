@@ -1,6 +1,7 @@
 //Index.js
 var running = false;
-var version = "0.1";
+var version = "0.4";
+var editId = null;
 
 var app = {
 	initialize: function() {

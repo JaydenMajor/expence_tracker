@@ -1,5 +1,6 @@
 <!-- List Expences -->
 <!DOCTYPE html>
+<html lang="en">
 <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -10,7 +11,7 @@
 </head>
 <body>
     <div class="app">
-		<div class="header"><h1><a href="index.html" class="back button">Back</a><span class="expenceTitle">Expense</span> Tracker</h1></div><br/><br/>
+		<div class="header"><h1 class="headerBack"><a href="index.html" class="back button">Back</a><span class="expenceTitle">Expense</span> Tracker</h1></div><br/><br/>
 		<h2 class="pageTitle">My Expenses</h2>
 		<div id="data">
 			<p id="datainfo">
@@ -74,7 +75,8 @@
 				return string.charAt(0).toUpperCase() + string.slice(1);
 			}
 			function editItem(id){
-				
+				editId = id;
+				window.location = "editExpence.html";
 			}
 			function delItem(id){
 				db.transaction(function(tx){

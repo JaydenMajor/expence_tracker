@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -9,7 +10,7 @@
 </head>
 <body>
     <div class="app">
-		<div class="header"><h1><a href="index.html" class="back button">Back</a><span class="expenceTitle">Expense</span> Tracker</h1></div><br/><br/>
+		<div class="header"><h1 class="headerBack"><a href="index.html" class="back button">Back</a><span class="expenceTitle">Expense</span> Tracker</h1></div><br/><br/>
 		<h2 class="pageTitle">Add An Expense</h2>
 		<form action="" method="post">
 			<label for="name">Name: </label>
@@ -19,7 +20,7 @@
 			<input type="number" name="price" id="price" placeholder="$99.95" step="0.01"/>
 			<br/><br/>
 			<label for="description">Description: </label>
-			<textarea name="description" id="description" onfocus="function(){if(document.getElementById('description').innerHTML == 'Insert Description Here'){document.getElementById('description').innerHTML = '';}}" onblur="function(){if(document.getElementById('description').innerHTML == ''){document.getElementById('description').innerHTML = 'Insert Description Here';}}"></textarea>
+			<textarea name="description" id="description"></textarea>
 			<br/><br/>
 			<label for="image" onclick="takePhoto()">Photo: </label><br/><br/>
 			<img src="" class="imgbutton" id="smallImage" width="100" height="100" onclick="takePhoto()"/>

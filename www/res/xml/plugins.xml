@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<platform name="android">
+    <plugin name="Storage" value="org.apache.cordova.Storage" />
+</platform>
+<platform name="ios">
+	<feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+</platform>

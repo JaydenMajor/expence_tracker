@@ -1,0 +1,84 @@
+<!-- Edit Expence -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Expense Tracker | Edit Expenses</title>
+</head>
+<body>
+    <div class="app">
+		<div class="header"><h1 class="headerBack"><a href="index.html" class="back button">Back</a><span class="expenceTitle">Expense</span> Tracker</h1></div><br/><br/>
+		<h2 class="pageTitle">Edit Expense</h2>
+		<form action="" method="post">
+			<label for="name">Name: </label>
+			<input type="text" name="name" id="name" placeholder="Product A*"/>
+			<br/><br/>
+			<label for="price">Price: </label>
+			<input type="number" name="price" id="price" placeholder="$99.95" step="0.01"/>
+			<br/><br/>
+			<label for="description">Description: </label>
+			<textarea name="description" id="description"></textarea>
+			<br/><br/>
+			<label for="image" onclick="takePhoto()">Photo: </label><br/><br/>
+			<img src="" class="imgbutton" id="smallImage" width="100" height="100" onclick="takePhoto()"/>
+			<input id="imgBace64" style="display:none;" name="imgBase64" value="" type="hidden"/>
+			<br/><br/>
+			<button type="button" class="submit button" onclick="saveExpense()">Add Expense</button>
+		</form>
+	</div>
+	  <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+		app.initialize();
+		var db = window.openDatabase("expenses", "1.0", "Expenses DB", 100*1024*1024);
+		if(editId != null){
+			db.transaction(function(tx){
+			tx.executeSql('SELECT * FROM expenses WHERE id = '+editId, [],   function(tx, results) {
+				document.getElementById('name').value = results.rows.item.(0).name;
+				document.getElementById('price').value = results.rows.item.(0).price;
+				document.getElementById('description').value = results.rows.item.(0).description;
+				document.getElementById('smallImage').src = results.rows.item.(0).imgbase;
+				document.getElementById('imgBace64').value = results.rows.item.(0).imgbase;
+			}, errorCB);
+		}, errorCB, successCB);
+		}
+		else{
+			alert('ID not set error...');
+			window.location = "listExpence.html";
+		}
+		function saveExpense(){
+			db.transaction(function(tx){
+				tx.executeSql('SELECT * FROM expenses WHERE id = '+editId, [],   function(tx, results) {
+					// tx.executeSql('INSERT INTO expenses (id,name,price,description,timestamp,imgbase) VALUES ('+id+',"'+name+'","'+price+'","'+description+'","'+timestamp+'","'+imgBase+'")');
+				}, errorCB);
+			}, errorCB, successCB);
+			editId = null;
+		}
+		function errorCB(err){
+			alert('Error: '+err.message+' Code:'+err.code);
+			// alert('Error: '+err.code);
+		}
+		function successCB(){
+			window.location = 'listExpense.html';
+			//alert('Saved Data To DataBase');
+		}
+		function takePhoto(){
+			navigator.camera.getPicture(takePhotoSuccess, takePhotoError, { quality: 50, destinationType : Camera.DestinationType.DATA_URL, sourceType : Camera.PictureSourceType.CAMERA, allowEdit : true, encodingType: Camera.EncodingType.JPEG,targetWidth: 100,
+  targetHeight: 100});
+		}
+		function takePhotoSuccess(imageData){
+			var smallImage = document.getElementById('smallImage');
+			smallImage.style.display = 'block';
+			smallImage.src = "data:image/jpeg;base64," + imageData;
+			document.getElementById('imgBace64').value  = "data:image/jpeg;base64," + imageData;
+		}
+		function takePhotoError(message){
+			// alert('Photo Error: ' +message);
+		}
+		</script>
+</body>
+</html>
